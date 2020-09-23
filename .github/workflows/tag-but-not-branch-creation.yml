@@ -18,3 +18,8 @@ jobs:
     steps:
       - name: Self-check
         run: echo Hello from tag
+
+  dep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo I am in dep!
