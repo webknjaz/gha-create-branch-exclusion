@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  create:  # is used for publishing to PyPI and TestPyPI
+    tags:  # any tag regardless of its name, no branches
+    - >-
+      **
+    branches-ignore:
+    - >-
+      **
+
+jobs:
+  build:
+    if: github.event_name == 'create' && github.ref_type == 'tag'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Self-check
+        run: echo Hello from tag
